@@ -1,0 +1,126 @@
+{
+  "items": [
+    {
+      "type": ["h-card"],
+      "properties": {
+        "url": ["/"],
+        "name": ["Keith J. Grant"],
+        "photo": ["/images/keithjgrant.jpg"]
+      }
+    },
+    {
+      "type": ["h-entry"],
+      "properties": {
+        "in-reply-to": ["https://jeena.net/notes/960"],
+        "published": ["11:35AMEST•11Sep2018"],
+        "content": [
+          {
+            "value": "testing some webmention endpoint discovery…",
+            "html":
+              "\n      \n\n      <p>testing some webmention endpoint discovery&hellip;</p>\n\n      <data class=\"p-bridgy-omit-link\" value=\"false\"></data>\n      <a href=\"https://brid.gy/publish/twitter\"></a>\n      <a href=\"https://fed.brid.gy/\"></a>\n    "
+          }
+        ],
+        "bridgy-omit-link": ["false"],
+        "name": [
+          "in reply to\n  \n    \n    \n    \n      \n      \n        a post on jeena.net\n      \n    \n  \n  \n\n\n    \n\n    \n\n    \n\n\n    \n      11:35 AM EST • 11 Sep 2018\n    \n    \n      \n\n      testing some webmention endpoint discovery…\n\n      \n      \n      \n    \n  \n  \n    \n      \n  Loading interactions…\n\n\n  \n    \n      \n  comment\n  \n\n\n      replies\n    \n    \n      \n  heart\n  \n\n\n      likes\n    \n    \n      \n\n      shares\n    \n  \n  \n    \n      \n      Have you written a response to this? Let me know the URL:\n      \n        \n        Send Webmention"
+        ]
+      },
+      "children": [
+        {
+          "type": ["h-entry"],
+          "properties": {
+            "photo": [""],
+            "author": ["", ""],
+            "url": [""],
+            "entry": [{"value": "", "html": ""}]
+          }
+        },
+        {
+          "type": ["h-entry"],
+          "properties": {
+            "author": [
+              {
+                "type": ["h-card"],
+                "properties": {
+                  "url": [""],
+                  "name": [""],
+                  "author": [""],
+                  "photo": [""]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "rels": {
+    "stylesheet": ["/css/style.css"],
+    "apple-touch-icon": ["/images/apple-icon-144.png"],
+    "icon": [
+      "/images/favicon-32.png",
+      "/images/favicon-96.png",
+      "/images/favicon-16.png"
+    ],
+    "alternate": ["/posts/index.xml", "/notes/index.xml"],
+    "self": [
+      "https://keithjgrant.com/replies/2018/09/testing-some-webmention-endpoint-discovery/"
+    ],
+    "hub": ["https://keithjgrant.superfeedr.com/"],
+    "pingback": ["https://webmention.io/keithjgrant.com/xmlrpc"],
+    "webmention": ["https://webmention.io/keithjgrant.com/webmention"],
+    "authorization_endpoint": ["https://indieauth.com/auth"],
+    "token_endpoint": ["https://tokens.indieauth.com/token"],
+    "micropub": ["https://micropub.keithjgrant.com/micropub/main"],
+    "preload": [
+      "/fonts/glober-regular.woff2",
+      "/fonts/glober-xbold.woff2",
+      "/fonts/calendas_plus-webfont.woff2"
+    ],
+    "canonical": [
+      "https://keithjgrant.com/replies/2018/09/testing-some-webmention-endpoint-discovery/"
+    ],
+    "in-reply-to": ["https://jeena.net/notes/960"],
+    "me": ["https://twitter.com/keithjgrant", "https://github.com/keithjgrant"]
+  },
+  "rel-urls": {
+    "/css/style.css": {"rels": ["stylesheet"]},
+    "/images/apple-icon-144.png": {"rels": ["apple-touch-icon"]},
+    "/images/favicon-32.png": {"type": "image/png", "rels": ["icon"]},
+    "/images/favicon-96.png": {"type": "image/png", "rels": ["icon"]},
+    "/images/favicon-16.png": {"type": "image/png", "rels": ["icon"]},
+    "/posts/index.xml": {
+      "type": "application/atom+xml",
+      "title": "Posts",
+      "rels": ["alternate"]
+    },
+    "/notes/index.xml": {
+      "type": "application/atom+xml",
+      "title": "Notes",
+      "rels": ["alternate"]
+    },
+    "https://keithjgrant.com/replies/2018/09/testing-some-webmention-endpoint-discovery/": {
+      "rels": ["self"]
+    },
+    "https://keithjgrant.superfeedr.com/": {"rels": ["hub"]},
+    "https://webmention.io/keithjgrant.com/xmlrpc": {"rels": ["pingback"]},
+    "https://webmention.io/keithjgrant.com/webmention": {
+      "rels": ["webmention"]
+    },
+    "https://indieauth.com/auth": {"rels": ["authorization_endpoint"]},
+    "https://tokens.indieauth.com/token": {"rels": ["token_endpoint"]},
+    "https://micropub.keithjgrant.com/micropub/main": {"rels": ["micropub"]},
+    "/fonts/glober-regular.woff2": {"type": "font/woff2", "rels": ["preload"]},
+    "/fonts/glober-xbold.woff2": {"type": "font/woff2", "rels": ["preload"]},
+    "/fonts/calendas_plus-webfont.woff2": {
+      "type": "font/woff2",
+      "rels": ["preload"]
+    },
+    "https://jeena.net/notes/960": {
+      "text": "a post on jeena.net",
+      "rels": ["in-reply-to"]
+    },
+    "https://twitter.com/keithjgrant": {"text": "Twitter logo", "rels": ["me"]},
+    "https://github.com/keithjgrant": {"text": "Github logo", "rels": ["me"]}
+  }
+}

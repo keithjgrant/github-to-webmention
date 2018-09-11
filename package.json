@@ -1,21 +1,24 @@
 {
   "name": "github-to-webmention",
   "version": "0.0.1",
-  "description": "Send webmentions to linked pages from static site repository on GitHub",
+  "description":
+    "Send webmentions to linked pages from static site repository on GitHub",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha -r esm"
   },
-  "keywords": [
-    "indieweb",
-    "webmention"
-  ],
+  "keywords": ["indieweb", "webmention"],
   "author": "Keith J. Grant",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
     "esm": "^3.0.82",
-    "microformat-node": "^2.0.1"
+    "microformat-node": "^2.0.1",
+    "parse-link-header": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "mocha": "^5.2.0"
   }
 }

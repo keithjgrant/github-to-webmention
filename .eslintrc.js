@@ -3,18 +3,14 @@ module.exports = {
   env: {
     es6: true,
   },
+  parser: require.resolve('babel-eslint'),
   parserOptions: {
     ecmaVersion: '6',
     sourceType: 'module',
   },
   rules: {
     'no-shadow': 'warn',
-    'no-unused-vars': [
-      'error',
-      {
-        varsIgnorePattern: '^h$',
-      },
-    ],
+    'no-unused-vars': 'error',
     'object-curly-spacing': 0,
   },
   globals: {
@@ -26,7 +22,7 @@ module.exports = {
     setInterval: true,
     clearInterval: true,
     Promise: true,
-    chrome: true,
-    browser: true,
+    describe: true,
+    it: true,
   },
 };
