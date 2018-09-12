@@ -47,7 +47,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><link rel="webmention" href="https://example.com/webmention"><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        }
+        },
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -62,7 +62,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><link rel="webmention" href="/webmention"><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        }
+        },
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -77,7 +77,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><a rel="webmention" href="https://example.com/webmention">link</a><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        }
+        },
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -92,7 +92,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><a rel="webmention" href="/webmention">link</a><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        }
+        },
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -119,7 +119,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><link rel="webmention" href="bar/webmention"><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        }
+        },
       );
     const result = findWebmentionEndpoint('https://example.com/foo/bar');
 
@@ -137,7 +137,7 @@ describe('findWebmentionEndpoint', () => {
     assert.equal(await result, null);
   });
 
-  describe.skip('webmention.rocks (live tests)', () => {
+  describe.only('webmention.rocks (live tests)', () => {
     async function run(url, endpointUrl) {
       const result = findWebmentionEndpoint(url);
       assert.equal(await result, endpointUrl);
@@ -145,10 +145,14 @@ describe('findWebmentionEndpoint', () => {
 
     for (let i = 1; i <= 23; i++) {
       it(`test ${i}`, async () => {
-        await run(
-          `https://webmention.rocks/test/${i}`,
-          `https://webmention.rocks/test/${i}/webmention`
-        );
+        let expected = `https://webmention.rocks/test/${i}/webmention`;
+        if (i === 15) {
+          expected = `https://webmention.rocks/test/${i}`;
+        }
+        if (i === 21) {
+          expected = `https://webmention.rocks/test/${i}/webmention?query=yes`;
+        }
+        await run(`https://webmention.rocks/test/${i}`, expected);
       });
     }
   });
