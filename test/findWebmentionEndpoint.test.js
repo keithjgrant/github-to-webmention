@@ -1,6 +1,5 @@
 import assert from 'assert';
 import nock from 'nock';
-import {URL} from 'url';
 import parseLinkHeader from 'parse-link-header';
 import findWebmentionEndpoint from '../lib/findWebmentionEndpoint';
 
@@ -136,5 +135,21 @@ describe('findWebmentionEndpoint', () => {
     const result = findWebmentionEndpoint('https://example.com/foo');
 
     assert.equal(await result, null);
+  });
+
+  describe.skip('webmention.rocks (live tests)', () => {
+    async function run(url, endpointUrl) {
+      const result = findWebmentionEndpoint(url);
+      assert.equal(await result, endpointUrl);
+    }
+
+    for (let i = 1; i <= 23; i++) {
+      it(`test ${i}`, async () => {
+        await run(
+          `https://webmention.rocks/test/${i}`,
+          `https://webmention.rocks/test/${i}/webmention`
+        );
+      });
+    }
   });
 });
