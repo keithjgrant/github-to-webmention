@@ -24,5 +24,7 @@ module.exports = {
     Promise: true,
     describe: true,
     it: true,
+    beforeEach: true,
+    afterEach: true,
   },
 };
