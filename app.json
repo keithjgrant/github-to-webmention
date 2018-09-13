@@ -1,0 +1,39 @@
+{
+  "name": "GitHub to Webmention",
+  "description":
+    "Send webmentions to linked pages from static site repository on GitHub",
+  "keywords": ["indieweb", "webmention", "jekyll", "hugo"],
+  "repository": "https://github.com/keithjgrant/github-to-webmention",
+  "env": {
+    "PORT": {
+      "description": "Port number",
+      "value": 80
+    },
+    "BRANCH_NAME": {
+      "description": "Git branch name to watch",
+      "value": "master"
+    },
+    "CONTENT_DIRECTORY": {
+      "description": "The directory in your repository to monitor for changes.",
+      "required": true
+    },
+    "WEBSITE_URL": {
+      "description": "URL where your site can be found.",
+      "required": true
+    },
+    "RETRY_DELAY_SECONDS": {
+      "description":
+        "If your page is not found, number of seconds to wait before retrying",
+      "value": "45"
+    },
+    "MAX_RETRIES": {
+      "description": "If your page is not found, max number of times to retry",
+      "value": "5"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}

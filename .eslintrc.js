@@ -14,9 +14,7 @@ module.exports = {
     'object-curly-spacing': 0,
   },
   globals: {
-    document: true,
-    window: true,
-    localStorage: true,
+    process: true,
     setTimeout: true,
     clearTimeout: true,
     setInterval: true,

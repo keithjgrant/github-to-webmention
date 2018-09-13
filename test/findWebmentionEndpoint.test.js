@@ -47,7 +47,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><link rel="webmention" href="https://example.com/webmention"><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        },
+        }
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -62,7 +62,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><link rel="webmention" href="/webmention"><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        },
+        }
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -77,7 +77,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><a rel="webmention" href="https://example.com/webmention">link</a><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        },
+        }
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -92,7 +92,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><a rel="webmention" href="/webmention">link</a><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        },
+        }
       );
     const result = findWebmentionEndpoint('https://example.com/foo');
 
@@ -119,7 +119,7 @@ describe('findWebmentionEndpoint', () => {
         '<html><link rel="webmention" href="bar/webmention"><p>some body</p></html',
         {
           'Content-Type': 'text/html',
-        },
+        }
       );
     const result = findWebmentionEndpoint('https://example.com/foo/bar');
 
@@ -137,7 +137,11 @@ describe('findWebmentionEndpoint', () => {
     assert.equal(await result, null);
   });
 
-  describe.only('webmention.rocks (live tests)', () => {
+  // TODO: follow redirects
+
+  // These test against a suite of tests hosted on webmention.rocks.
+  // These are mainly only for initial development and baseline checks.
+  describe.skip('webmention.rocks (live tests)', () => {
     async function run(url, endpointUrl) {
       const result = findWebmentionEndpoint(url);
       assert.equal(await result, endpointUrl);
