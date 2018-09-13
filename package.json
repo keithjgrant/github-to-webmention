@@ -1,15 +1,21 @@
 {
   "name": "github-to-webmention",
   "version": "0.0.1",
-  "description":
-    "Send webmentions to linked pages from static site repository on GitHub",
+  "description": "Send webmentions to linked pages from static site repository on GitHub",
   "main": "index.js",
   "module": "index.js",
   "scripts": {
-    "start": "heroku",
+    "start": "node ./index.js",
+    "heroku": "heroku",
+    "dev": "heroku local web",
     "test": "mocha -r esm"
   },
-  "keywords": ["indieweb", "webmention", "hugo", "jekyll"],
+  "keywords": [
+    "indieweb",
+    "webmention",
+    "hugo",
+    "jekyll"
+  ],
   "author": "Keith J. Grant",
   "license": "MIT",
   "dependencies": {
