@@ -6,6 +6,7 @@ import getTargetUrls, {
 import mfData1 from './fixtures/mf-data-1.json';
 import mfData2 from './fixtures/mf-data-2.json';
 import page1 from './fixtures/page-1-html';
+import page2 from './fixtures/page-2-html';
 
 describe('findContentLinks', () => {
   it('should return return list of links', function() {
@@ -64,6 +65,15 @@ describe('getTargetUrls', () => {
       'https://adactio.com/journal/13831',
       'https://www.smashingmagazine.com/2016/03/houdini-maybe-the-most-exciting-development-in-css-youve-never-heard-of/',
       'https://freecontent.manning.com/modular-css/',
+    ]);
+  });
+
+  it('should include in-reply-to url', async () => {
+    const url = 'https://keithjgrant.com/replies/2018/09/ping-3/';
+    const result = await getTargetUrls(page2, url);
+    assert.deepEqual(result, [
+      'https://keithjgrant.com/replies/2018/09/50601/',
+      'https://brid.gy/publish/twitter',
     ]);
   });
 });
